@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./react-app:/usr/src/app
+    command: sh -c 'cd react-app && yarn start'
+    ports:
+      - '3000:3000'
